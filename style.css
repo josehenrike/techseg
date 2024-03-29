@@ -16,11 +16,13 @@
     --dark: #1e1c2a;
 }
 
-body {
-    color: var(--white);
-    background: var(--white);
+.fundo{
+    max-height: 100vh;
+    width: 100%;
     background: url(img/fundo.png);
     background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
 .navigation img {
@@ -34,7 +36,6 @@ body {
     padding: 20px 200px;
     width: 100%;
     transition: all 0.5s;
-    position: fixed;
 }
 
 .navigation ul {
@@ -75,11 +76,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 10%;
+    padding: 0px 10% 8%;
 }
 
 .home-text {
     max-width: 37rem;
+}
+
+.text-h1, p{
+    color: var(--white);
 }
 
 .home-text .text-h4 {
@@ -114,7 +119,74 @@ body {
 .home-img img {
     width: 100%;
     width: 650px;
+    padding: 0px 0px 8%;
 }
+
+.title h1{
+    text-align: center;
+    padding-top: 50px;
+    font-size: 42px;
+}
+
+.title p{
+    text-align: center;
+    padding: 1% 20%;
+    color: black;
+    font-size: 18px;
+
+}
+
+.title h1::after{
+    content: "";
+    height: 3px;
+    width: 230px;
+    background-color: #000;
+    display: block;
+    margin: auto;
+}
+
+.about{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 75px auto;
+    text-align: center;
+}
+
+.card{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 20px;
+    padding: 20px 20px;
+    background-color: var(--second);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.card:hover{
+    background-color: var(--primary);
+    transition: 0.4 ease;
+}
+
+.card .icon{
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.card h2{
+    font-size: 28px;
+}
+
+.card p{
+    font: 17px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
 
 @media (max-width:785px) {
     .navigation {
@@ -180,5 +252,17 @@ body {
 
     .home-img {
         width: 125%;
+    }
+}
+
+@media screen and (max-widht: 940px){
+    .about{
+        display: flex;
+        flex-direction: column;
+    }
+    .card{
+        width: 85%;
+        display: flex;
+        margin: 20px 0px;
     }
 }
