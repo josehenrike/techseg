@@ -125,7 +125,8 @@
 .title h1{
     text-align: center;
     padding-top: 50px;
-    font-size: 42px;
+    font-size: 40px;
+    font-weight: 600;
 }
 
 .title p{
@@ -133,14 +134,13 @@
     padding: 1% 20%;
     color: black;
     font-size: 18px;
-
 }
 
 .title h1::after{
     content: "";
     height: 3px;
-    width: 230px;
-    background-color: #000;
+    width: 200px;
+    background-color: var(--second);
     display: block;
     margin: auto;
 }
@@ -179,6 +179,7 @@
 
 .card h2{
     font-size: 28px;
+    font-weight: 600;
 }
 
 .card p{
@@ -187,6 +188,149 @@
     line-height: 1.5;
 }
 
+.services{
+    width: 100%;
+    height: 100vh;
+    padding: 0 15%;
+}
+
+.services h1 {
+    text-align: center;
+    padding-top: 3%;
+    margin-bottom: 60px;
+    font-size: 40px;
+    font-weight: 600;
+    position: relative;
+}
+
+.services h1::after{
+    content: "";
+    height: 3px;
+    width: 110px;
+    background-color: var(--second);
+    display: block;
+    margin: auto;
+}
+
+.serv p{
+    color: black;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+
+.serv{
+    text-align: center;
+    padding: 25px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s, background 0.5s;
+}
+
+.serv i {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: var(--second);
+}
+
+.serv h2{
+    font-weight: 600;
+}
+
+.serv:hover{
+    background: var(--primary);
+    transform: scale(1.05);
+}
+
+.button{
+    padding: 60px;
+    text-align: center;
+}
+
+.services-btn {
+    padding: 15px 30px;
+    background: var(--second);
+    color: var(--white);
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+.services-btn:hover {
+    background: var(--primary);
+}
+
+footer{
+    background: var(--second);
+    height: auto;
+    width: 100%;
+    padding-top: 40px;
+}
+
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+    margin: 0 10px;
+}
+
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.socials a i{
+    font-size: 1.5rem;
+    transition: color .4s ease;
+}
+
+.socials a:hover i {
+    color: var(--primary);
+}
+
+.footer-bottom{
+    background: #000;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    word-spacing: capitalize;
+}
 
 @media (max-width:785px) {
     .navigation {
