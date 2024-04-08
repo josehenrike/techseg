@@ -55,21 +55,6 @@
   color: var(--primary);
 }
 
-.menu {
-  cursor: pointer;
-  display: none;
-}
-
-.menu .bar {
-  display: block;
-  width: 28px;
-  height: 3px;
-  border-radius: 3px;
-  background: var(--white);
-  margin: 5px auto;
-  transform: all 0.3s;
-}
-
 .home {
   width: 100%;
   height: 100vh;
@@ -139,6 +124,11 @@ p {
   padding: 1% 20%;
   color: black;
   font-size: 18px;
+
+  @media (max-width: 785px){
+    padding: 0 0;
+    padding-top: 20px;
+  }
 }
 
 .title h1::after {
@@ -151,52 +141,50 @@ p {
 }
 
 .about {
-  width: 70%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 75px auto;
   text-align: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 30px;
+}
 
-  @media (max-width: 785px) {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
+.section {
+  width: 100%;
+  padding: 0 15%;
 }
 
 .card {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  margin: 0px 20px;
-  padding: 20px 20px;
-  background-color: var(--second);
-  border-radius: 10px;
+  text-align: center;
+  padding: 25px 10px;
+  border-radius: 5px;
+  font-size: 14px;
   cursor: pointer;
+  background: transparent;
+  transition: transform 0.5s, background 0.5s;
 }
 
-.card:hover {
-  background-color: var(--primary);
-  transition: 0.4 ease;
+.card p{
+  color: black;
+  font-size: 16px;
 }
 
-.card .icon {
-  font-size: 35px;
+.card i {
+  font-size: 40px;
   margin-bottom: 10px;
+  color: var(--second);
 }
 
 .card h2 {
-  font-size: 28px;
   font-weight: 600;
 }
 
-.card p {
-  font: 17px;
-  margin-bottom: 30px;
-  line-height: 1.5;
+.card:hover {
+  background: var(--primary);
+  transform: scale(1.05);
 }
 
 .services {
@@ -299,6 +287,58 @@ p {
   margin: auto;
 }
 
+@keyframes slide{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+.clientes{
+  overflow: hidden;
+  padding: 40px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.clientes:before,
+.clientes:after{
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.clientes:before{
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.clientes:after{
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.clientes:hover .clientes-slide{
+  animation-play-state: paused;
+}
+
+.clientes-slide{
+  display: inline-block;
+  animation: 25s slide infinite linear;
+}
+
+.clientes-slide img{
+  height: 50px;
+  margin: 0 40px;
+}
+
+
+
 footer {
   background: var(--second);
   height: auto;
@@ -371,22 +411,6 @@ footer {
     padding: 18px 20px;
   }
 
-  .menu {
-    display: block;
-  }
-
-  .menu.ativo .har:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .menu.ativo .har:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu.ativo .har:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
   .nav-menu {
     position: fixed;
     right: -100%;
@@ -433,6 +457,7 @@ footer {
     display: flex;
     flex-direction: column;
   }
+
   .card {
     width: 85%;
     display: flex;
