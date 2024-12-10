@@ -1,0 +1,1 @@
+Projeto desenvolvido como freelance para um cliente que desejava criar um portfólio profissional para apresentar aos seus potenciais clientes. O objetivo principal foi transmitir maior profissionalismo e confiança, destacando os serviços oferecidos pela empresa de forma atrativa e bem estruturada.
